@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background:
+      linear-gradient(
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.25)
+      ),
+      url("assets/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+  }
+  
+
+  .container {
+    display: flex;
+    justify-content: flex-end;   /* 👉 move card to RIGHT side */
+    align-items: center;         /* vertical center */
+    height: 100vh;
+    padding-right: 100px;         /* space from right edge */
+  }
+  
+
+.card {
+  display: none;
+  width: 360px;
+  padding: 22px;
+  text-align: center;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(16px);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  animation: fade 0.6s ease;
+}
+
+.card.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+button {
+  margin-top: 14px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #ff5c8a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.no-btn {
+  background: #ffc0cb;
+  position: relative;
+}
+
+.chat .bubble {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 14px;
+  background: #ffe6f0;
+}
+
+.left { text-align: left; }
+.right { text-align: right; }
+
+.photo-card {
+  width: 200px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.photo-card img {
+  width: 100%;
+}
+
+.gif {
+  width: 120px;
+  margin: 10px auto;
+}
+
+/* HEARTS */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: fly 8s linear infinite;
+}
+
+@keyframes fly {
+  to {
+    transform: translateY(-120vh) scale(1.4);
+    opacity: 0;
+  }
+  
+}
+
+/* ===============================
+   QUIZ BUTTON ALIGNMENT FIX
+   =============================== */
+
+#step5 button {
+  position: relative;
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease;
+}
+
+#step5 {
+  text-align: center;
+}
+
+#quizContinue {
+  margin-top: 16px;
+}
+
+/* FIX STICKER + BUTTON CENTER ALIGN (ONLY) */
+
+.card img,
+.card .gif {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+

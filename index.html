@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="assets/song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+  <!-- STEP 1 -->
+  <div class="card active" id="step1">
+    <h1>Hi Pathiyakara 🥹❤️</h1>
+    <p>Are you ready for the surprise?</p>
+    <button onclick="goStep(2)">YES 😍</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="card" id="step2">
+    <div class="chat">
+      <div class="bubble left">Hi Chelloo… 💌</div>
+      <div class="bubble right delay1">I made this just for you 😘</div>
+      <div class="bubble left delay2">Because you mean everything to me ❤️</div>
+    </div>
+    <button onclick="goStep(3)">Continue 💖</button>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="card" id="step3">
+    <p>I want to show you something special 💫</p>
+    <div class="photo-card" onclick="flipPhoto()">
+      <img id="photo" src="assets/me.jpg">
+    </div>
+    <p id="photoHint">Tap the photo 💗</p>
+    <button onclick="goStep(4)">Next 😌</button>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="card" id="step4">
+    <h2>Avlo seekkirama surprise kedachiratha boss 😏</h2>
+    <p>Before that. let’s play a small game🎮</p>
+    <img src="assets/Thinking.gif" class="gif">
+    <button onclick="goStep(5); loadQ();">YES 😍</button>
+  </div>
+
+  <!-- STEP 5 QUIZ -->
+<div class="card" id="step5">
+    <h2 id="quizQ"></h2>
+  
+    <button onclick="quizAnswer('you')">YOU 😌</button>
+    <button onclick="quizAnswer('me')" class="no-btn">ME 😏</button>
+  
+    <p id="quizMsg"></p>
+  
+    <!-- NEW: Continue button -->
+    <button id="quizContinue" onclick="goStep(6)" style="display:none;">
+      Continue 💖
+    </button>
+  </div>
+
+  <!-- STEP 6 -->
+  <div class="card" id="step6">
+    <h2>Type the magic word to unlock 🔐</h2>
+    <input id="secretInput" placeholder="Type here..." />
+    <button onclick="checkSecret()">GUESS 😏</button>
+    <p id="hint"></p>
+  </div>
+
+  <!-- FINAL -->
+  <div class="card" id="final">
+    <p>You came this far… 😌</p>
+    <h1>Will you be my Valentine? ❤️🌹</h1>
+    <img src="assets/kissing.gif" class="gif">
+    <button onclick="finalYes()">YES 💘</button>
+    <button class="no-btn">Already taken 😌</button>
+  </div>
+
+  <!-- END -->
+  <div class="card" id="end">
+    <h2>Your surprise is on the way… 😌❤️</h2>
+    <img src="assets/heart-carry.png" class="gif">
+    <p>Made with ❤️ by your girl</p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
