@@ -16,7 +16,12 @@ setInterval(() => {
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 9000);
 }, 350);
-
+// Preload images
+const images = ["assets/me.jpg", "assets/him.png"];
+images.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
 // ================= PHOTO FLIP =================
 let flipped = false;
 function flipPhoto() {
@@ -24,7 +29,7 @@ function flipPhoto() {
   flipped = !flipped;
   img.src = flipped ? "assets/him.png" : "assets/me.jpg";
   document.getElementById("photoHint").innerText =
-    flipped ? " Cute laaa😍😌" : "Tap the photo 💗";
+    flipped ? " Not perfect!😜 but Cute laaa😍😌" : "Tap the photo 💗";
 }
 
 // ================= QUIZ =================
